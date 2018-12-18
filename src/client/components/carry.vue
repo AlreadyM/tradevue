@@ -5,7 +5,7 @@
     <a href="javascript:;" @click="loop1">开始变换</a>
   </div>
 </template>
-
+<script src="./static/1.js"></script>
 <script>
 export default {
   data () {
@@ -14,15 +14,17 @@ export default {
       // with hot-reload because the reloaded component
       // preserves its current state and we are modifying
       // its initial state.
-      msg: 1,
-      methods: {
-        loop1:function(){
-            setInterval(function(){
-                this.msg +=1;
-            },1000)
-        }
+      msg: 1
     }
-    }
+  },
+  methods: {
+      loop1:function(){
+        var parent = this;
+        setInterval(function(){
+          parent.msg +=1;
+          // console.log(parent.msg)
+        },10)
+      }
   }
 }
 </script>
